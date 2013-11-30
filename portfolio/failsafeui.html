@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Laubach Portfolio - Fail Safe Banking UI</title>
+		<link type="text/css" rel="stylesheet" href="http://taylorlaubach.com/coldsoil.css" />
+	</head>
+	<body>
+		<h1>Taylor Laubach</h1>
+		<h2>UX Design</h2>
+		<div id="logoborder"></div>
+		
+		<div id="slantborder"><div id="navbarslant"></div></div>
+		<div id="navbar">
+			<div class="divider" id="left"><a href="http://taylorlaubach.com/index.html">Home</a></div>
+			<div class="divider"><a href="http://taylorlaubach.com/portfolio.html">Portfolio</a></div>
+			<div class="divider" id="right"><a href="http://taylorlaubach.com/resume.html">Resume</a></div>
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="portfoliocontent">
+
+			<h3>The Issue:</h3>
+			
+			<p>Users were editing banking information for a large organization. When they were changing the amounts budgeted for paying different partner organizations, they were sometimes removing from the budget money that had already been spent.</p>
+
+			<p>(For example, they could budget $1000 for paying Company A, spend $500 of it, and then change the budget to $200.)</p>
+
+			<h3>The Process:</h3>
+
+			<p>The client asked us to implement a validation which would prevent a user from saving a budget if the amount budgeted for a given line was less than the amount that had already been spent.<p>
+
+			<p>I saw that this would pose a few issues:</p>
+
+			<ul>
+
+				<li>A validation script alone would not be able to tell the user that the amount entered was incorrect until after it was entered.</li>
+
+				<li>If the validation was run on blur (every time the user clicked or tabbed away from a field), the script itself would interrupt the user's actions, preventing the user from smoothly tabbing or clicking through the page. However, for a user working all day in database software, quickly tabbing or clicking through a form is a necessity.</li>
+
+				<li>If the script was run upon saving the page, the feedback would be even further removed from the initial input. It would also be frustrating to fill out an entire page only to learn that an error on one field was preventing you from saving.</p>
+
+			</ul>
+
+			<p>I determined that, rather than run a validation script after the user was done entering a number, the system needed to provide users with enough information about the current state of the budget to allow them to make an informed decision about what the new budget should be.</p>
+
+			<p>The most obvious way of doing this would be to display, next to each field, the minimum enterable amount. However, this has a drawback of requiring that the user see the number, understand what it means (both that this is the minimum amount they may enter AND that the reason for this being the minimum amount is that it is the amount which has already been spent), and enter an amount greater than that number as the new budget.
+
+			<p>I wanted to make clear what the relationship of the dollars actually was: There was a certain amount of money that was no longer in the user's control. Why pretend that it still was? The previously discussed possibilities were ways of avoiding making the user look at more figures or more fields. However, in this case, there are three things going on. (There is a total budget, an amount of that budget which has already been spent, and an amount that is still available and can be moved elsewhere.) Representing those three things with fewer than three controls was actually more convuluted than simply having one control or display per concept.</p>
+
+			<h3>The Solution:</h3>
+
+			<p>My solution was to change one field: &#8216;&#8216;Budget&#8217;&#8217; into three fields: &#8216;&#8216;Budget Remaining&#8217;&#8217;, &#8216;&#8216;Paid&#8217;&#8217;, and &#8216;&#8216;Total Budget&#8217;&#8217;. With this setup, a user can enter any number they want into the editable field (&#8216;&#8216;Budget Remaining&#8217;&#8217;), and the system tells them what the total budget is and how much has been spent. It is now not possible to take away money that has already been paid out.</p>
+
+			<p>Although this adds complexity to the page, the client determined that this is outweighed by the extra clarity and transparency it provides.</p>
+
+			<p>In addition, I moved the checkboxes so that they were clearly grouped with the label of the field which they were toggling on and off. (This budget screen also controls the rules for which fields appear on the corresponding invoices.) I also used the light gray background color to visually distinguish the field labels and controls from the group of fields to which they each correspond.</p>
+
+			<p>These have been welcome changes: There is no more incorrect entry of the budget amount, and the users have reported that this change saves them time. They don't need to look up the amount that has been paid before adjusting the budget.</p>
+
+			<h3>The original entry page:</h3>
+			<img src="failsafeui/failsafeui1.png" />
+			<h3>My redesigned entry page:</h3>
+			<img src="failsafeui/failsafeui2.png" />
+			
+		</div>
+
+		<div id="footer"></div>
+	</body>
+</html>

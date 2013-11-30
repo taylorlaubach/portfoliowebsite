@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Laubach Portfolio - Style Guide</title>
+		<link type="text/css" rel="stylesheet" href="http://taylorlaubach.com/coldsoil.css" />
+	</head>
+	<body>
+		<h1>Taylor Laubach</h1>
+		<h2>UX Design</h2>
+		<div id="logoborder"></div>
+		
+		<div id="slantborder"><div id="navbarslant"></div></div>
+		<div id="navbar">
+			<div class="divider" id="left"><a href="http://taylorlaubach.com/index.html">Home</a></div>
+			<div class="divider"><a href="http://taylorlaubach.com/portfolio.html">Portfolio</a></div>
+			<div class="divider" id="right"><a href="http://taylorlaubach.com/resume.html">Resume</a></div>
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="portfoliocontent">
+
+			<h3>The Issue:</h3>
+
+			<p>Our software is modular, meaning that when we make a new system for a client, we pick and choose the pieces of each existing system that will best meet the client's needs.</p>
+
+			<p>As we began making the newest version of our flagship software, we used the same methodology. We took the best parts of each existing system and put them together.</p>
+
+			<p>After months of redesigning and improving, version 2.0 of our flagship software was almost ready to be released. However, it was a hodgepodge. On each page (and sometimes within a page) there were different color pallettes, different types of buttons and lists, and completely different cues for what things were and how they should work. It was both confusing and unnatractive, and our first go-lives were fast approaching.</p>
+
+			<h3>The Process:</h3>
+
+			<p>I was asked to do a UX/UI redesign of the system to make it more attractive, more consistent, and easier to use.</p>
+
+			<p>When I started looking at the system in terms of the look of the UI, my first question was why the style sheets for the new system hadn't taken over when each module was originally plugged in. I talked to our Sr. Programmer to find out how our styles were functioning in the software. It turned out that as our software was developed, the various programmers had never had an overall plan or vision for how it would look. Each screen in the old software had been made individually to look like its mockup, but no thought had been given to an overall plan for the structure of the html or the classes that were used to accomplish each look. The new version had been built on top of that. There were a lot of inline styles, and almost all HTML classes were descriptions of how things looked, rather than semantic descriptions of what they meant.</p>
+
+			<p>In order to come up with a uniform (and useable) feel, I would need to design explicit semantic groupings for the entire site. This was at once a bit daunting (it was a lot of responsibility and I had never done that for a system of this size) and exciting (since in order to complete the task, it was necessary to design the look from the ground up). At this point it became clear how large a task this was--and how fun it was going to be.</p>
+
+			<p>I started looking through the system, putting together a couple of lists. One was just the basic elements that needed a uniform look: fonts, backgrounds, borders, buttons, fields, accordions. Another was the system that  I would need to structure: there were two or three levels of hierarchy in most pages, so I needed cues for that hierarchy, there were lists (sometimes within other lists) and they needed a uniform look, there were filter blocks, which were often impossible to tell apart from the form fields around them.</p>
+
+			<p>When I had a good idea of the structure I would use and its pieces, I went to our Visual Designer and asked her for help creating a color pallette for the site. We started discussing the colors, and she wanted to know more about what I was planning. As I explained, she started making ghost versions of each element for us to fill in. We spent the next two days passing her keyboard and mouse back and forth, trying out different concepts, colors, and ideas. At the end of it, we had mockups of two of the more complicated pages in the system contained in a style guide with the hex values of each color.</p>
+
+			<p>My next step was to sit down at my own computer with this guide and start explaining it. I wrote a spec for the style guide, with specific instructions for every detail, down to each color to be used and when. I also made it clear that no inline styles should be used anywhere. (What year is this, anyway?!)</p>
+
+			<p>When the spec was done, I gave it to the programmers and started working with them to implement it in staging on the two pages that were mocked up in the style guide. We showed the finished product to the Product Manager, and she was enthusiastic.</p>
+
+			<p>To ensure that the style guide was followed correctly, she asked me to mock up each page. I made a custom color pallete in Illustrator just for the colors in the style guide, and started mocking up the pages. It wasn't quite as simple as "apply these rules to each page" because the pages often had such different structures. My task became fitting the structure of each page to the semantic intent of the style guide we had created.</p>
+
+			<h3>The Solution:</h3>
+
+			<p>In our style guide, we made the following major decisions:</p>
+
+			<ul>
+				<li>There are three header styles for three levels of information hierarchy. The information hierarchy uses lighter shades of blue as you drill down.</li>
+				<li>There are two colors for list hierarchy. When an item in a list is opened, the list highlight color becomes the color of the item's header. If there is a list within that item, it highlights in a second color (and that second color is used as the header column for opening items in the second list).  The list hierarchy uses lighter shades of yellow as you drill down.</li>
+				<li>And because it was sometimes difficult to distinguish data entry fields from list filters, we outlined all filter sections in a 1px red border.</li>
+			</ul>
+			
+			<p class="final">The style guide and the specs I wrote to accompany it are below. When it was done, our company's Vice President asked me to start implementing this on all our products.</p>
+
+			<h3>The list hierarchy:</h3>
+			<img src="styleguide/styleguide1.png" />
+			<h3>The information hierarchy:</h3>
+			<img src="styleguide/styleguide2.png" />
+			<h3>The color palette:</h3>
+			<img src="styleguide/styleguide3.png" />
+			<h3>The spec:</h3>
+			
+				<p>We would like to implement a consistent user interface and consistent styles throughout LA GetCare. Moving forward, we will need to use one style sheet for all elements, rather than relying heavily on in-line style coding (as we do now).</p>
+
+				<p>This spec is to create a style sheetbased on the look and rules outlined here. The related specs will be to implement the style sheet on two pages using no inline styles.</p>
+
+				<p>The rules are outlined below. Among other things, the rules contain the exact hex values for the colors to be used.</p>
+
+				<p>The look we would like to mimic across the site is shown in the .pdf entitled LA Style Guide. It shows screenshots for the Assessment and Service Invoice pages.</p>
+
+				<p>For the LA GetCare style sheet, the basic rules we would like to follow are:</p>
+					<ul>
+						<li>A three level hierarchy:</li>
+						<ul>
+							<li>Top level: header is a navy blue (1c343f) bar with large bold white text. Has an arrow to expand/collapse.</li>
+							<li>Middle level: header is a baby blue (bfe5f0) bar with large bold black text. Has an arrow to expand/collapse.</li>
+							<li>Lower level: header has no bar, but is set into the box outline (which is broken where the text is) with medium bold black text.  (Subsequent levels, if applicable, have no box. Their headers will be aligned with the other text in the containing level of hierarchy and should use bold text of the same size as the normal text. Their bodies will be indented five spaces to the right of the header.)</li> 
+							<li>Each level has a box around it. The header is contained within this box. The box backgrounds are white (ffffff).</li>
+							<li>Filters are contained within their own box. The box outline should be colored reddish (ba543e) Each filter box should have the two buttons &#8216;&#8216;Apply&#8217;&#8217; and &#8216;&#8216;Reset&#8217;&#8217;.</li>
+							<li>Buttons are colored dark grey (757270).</li>
+						</ul>
+						<li>Lists:</li>
+						<ul>
+							<li>list headers should be colored dark grey (757270) at all levels of hierarchy.</li>
+							<li>List items should alternate background colors (white ffffff and gray dddddd).</li>
+							<li>The boxes around lists should all be paginated with no scroll bar. If the current page of the list is shorter than the maximum page length for the list, the box should resize to only be as big as the list.</li>
+							<li>Only necessary buttons should be available. So, there should be no &#8216;&#8216;Edit&#8217;&#8217; or &#8216;&#8216;Open&#8217;&#8217; buttons: clicking an item on a list should open the item. For lists, only the &#8216;&#8216;Add&#8217;&#8217; button should be usable when no item is selected. The other buttons should be grayed out. Once an item as been selected, the appropriate buttons should become usable.</li>
+							<li>When something is selected from a list, the item on the list should be highlighted, and this should open the list item automatically (no &#8216;&#8216;edit&#8217;&#8217; or &#8216;&#8216;open&#8217;&#8217; buttons). The header for the opened item should be the same as the highlight color.</li> 
+							<li>There will  be two highlight colors to accommodate lists within opened list items. The highest level box of the opened item should also be highlighted in the same color (515D5E). This is shown in the shot of the Service Invoice page.</li>
+						</ul>
+					</ul>
+			
+		</div>
+
+		<div id="footer"></div>
+	</body>
+</html>

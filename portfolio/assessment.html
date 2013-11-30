@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Laubach Portfolio - Online Health Assessment</title>
+		<link type="text/css" rel="stylesheet" href="http://taylorlaubach.com/coldsoil.css" />
+	</head>
+	<body>
+		<h1>Taylor Laubach</h1>
+		<h2>UX Design</h2>
+		<div id="logoborder"></div>
+		
+		<div id="slantborder"><div id="navbarslant"></div></div>
+		<div id="navbar">
+			<div class="divider" id="left"><a href="http://taylorlaubach.com/index.html">Home</a></div>
+			<div class="divider"><a href="http://taylorlaubach.com/portfolio.html">Portfolio</a></div>
+			<div class="divider" id="right"><a href="http://taylorlaubach.com/resume.html">Resume</a></div>
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="portfoliocontent">
+			<h3>The Issue:</h3>
+
+			<p>A client (using our enterprise-level software) had requested a public-facing website which would allow consumers to search the client's database of health care providers and resources.</p>
+
+			<p>The website needed an assessment that would produce a personalized list of a user's needs as well as a personalized list of the services that would meet those needs.</p>
+
+			<h3>The Process:</h3>
+
+			<p>I was given access to the client's database of services. The services were categorized by type, and I made a list of all the types of services in the database. I then researched what specific needs were met by each type of service.</p>
+
+			<p>The Project Manager was very familiar with community health services, and he determined which questions we would ask based on the assessments the client was already using. He gave me a list, grouped by "dimension of health". I went through our two lists and marked the questions which correlated to each need. I used these notes to determine which answers would lead to which service type recommendations.</p>
+
+			<p>I then went through the questions and gave them a hierarchy based on which could be used as leading questions for others. For groups that went together, I came up with higher leading questions, until there was one main question for each dimension of health and one leading question for each group or sub-group. The way in which some questions were asked, and the available options for answering, depended directly on the answers to others (as you will see below).</p>
+
+			<p>I wrote a spec to explain how the questions that were asked (and the available options) would be determined by a user's previous answers. The spec also explained how the answers, as a whole, would determine the most crucial needs and therefore the most important services to reccommend.</p>
+
+			<p>I worked directly with the developer who wrote the code. She decided to make the assessment table-driven. This meant that I could help by directly manipulating the phrasing of questions and options, as well as the rules for which questions and reccomendations were affected by each answer.</p>
+
+			<p>As the website developed, we went through an iteration of the assessment each week for 3 months.</p>
+
+			<h3>The Solution:</h3>
+
+			<p class="final">What we came up with was an intelligent assessment, designed to determine a user's needs while asking the fewest questions possible. This was accomplished by using combinations of answers to determine whether other questions and options should be displayed. In the screenshots below, you see a leading question about the user's (or a loved one's) ability to perform daily tasks, and a later question which asks about the help the person is receiving with the tasks they cannot complete on their own.</p>
+			
+			<h3>A leading question:</h3>
+			<img src="assessment/assessment1.png" />
+			<h3>A followup question:</h3>
+			<img src="assessment/assessment2.png" />
+			<h3>A later question based on these and other answers:</h3>
+			<img src="assessment/assessment3.png" />
+		
+		</div>
+
+		<div id="footer"></div>
+	</body>
+</html>

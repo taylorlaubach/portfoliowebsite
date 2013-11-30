@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Laubach Portfolio - Representing Linked Records</title>
+		<link type="text/css" rel="stylesheet" href="http://taylorlaubach.com/coldsoil.css" />
+	</head>
+	<body>
+		<h1>Taylor Laubach</h1>
+		<h2>UX Design</h2>
+		<div id="logoborder"></div>
+		
+		<div id="slantborder"><div id="navbarslant"></div></div>
+		<div id="navbar">
+			<div class="divider" id="left"><a href="http://taylorlaubach.com/index.html">Home</a></div>
+			<div class="divider"><a href="http://taylorlaubach.com/portfolio.html">Portfolio</a></div>
+			<div class="divider" id="right"><a href="http://taylorlaubach.com/resume.html">Resume</a></div>
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="portfoliocontent">
+		
+			<h3>The Problem:</h3>
+			<p>To meet a client's business requirements, we needed to add the same field to three locations within our software. The field was for linking two consumer records. (It needed to describe a relationship between two family members where one was taking care of the other.)</p>
+			
+			<h3>The Process:</h3>
+			<p>I saw two potential pitfalls:</p>
+			<ol>
+				<li>The same data item needed to be entered in the contacts section of both clients&#8217; records as well as in the assessment forms for one of the two. These three places could easily contain different information. Since it was not reasonable to assume that a user would remember to change all instances of the relationship if something changed, it was important that updating any one of the three locations would automatically update the other two to match. This meant that other users would not have to hunt around the system to find the most up-to-date information on a consumer's care relationships.</li>
+				<li>Because it described a relationship between two different client files, it was important that the wording be clear. Users could easily be confused about which side of the relationship they were supposed to describe on which file. (Do you describe the person whose record you are currently looking at, or the person whose record you are linking to?) It was important to make the wording clear so that no mistake could be made.)</li>
+			</ol>
+			
+			<h3>The Solution:</h3>
+
+			<p>With those two things in mind, I made a mockup of the field (with clear labels to avoid confusion) and wrote a spec to explain how answers in one area should map to the fields in other areas. (The fields were mirrored between two linked records. If one consumer was the Caregiver, the other needed to be the Care Receiver. That part was simple. However, if one was the Father, what would the other be? The son? The daughter? I had to make very explicit instructions for how that would be determined.</p>
+			
+			<p class="final">The mockup of the field and the spec for it are below. (Please note that the people in the database are referred to as "Client's" in this particular system.)</p>
+			<h3>The mockup:</h3>
+			<img src="relationship/relationship1.png" />
+			<h3>The spec:</h3>
+
+				<p>Please add a box labeled &#8216;&#8216;FCSP Relationship&#8217;&#8217; to the Contacts portion of the CareTool.</p>
+
+				<p>It will have a different background color than the rest of the page. This color will be fbd19e. The related ticket specifies that a class should be created for this and added to the new style sheet. (Please do not use an inline style.)</p>
+
+				<p>It will look as pictured in the attached screenshot. It will contain an ajax search on contacts&#8217; names, a field for designating Caregiver / Care Receiver, and a field designating relationship.</p>
+
+				<p>Relationships will link two consumer records and will be reciprocal. This will have the following effects:</p>
+				<ul>
+					<li>Any name that has been saved in a client&#8217;s FCSP Relationship box will become a hyperlink to that contact&#8217;s record.</li>
+					<li>Adding a contact to client&#8217;s FCSP Relationship box also adds the client to the FCSP Relationship box of their contact.</li>
+					<li>When a contact is added as a Caregiver, the client will be added as a Care Receiver on the contact&#8217;s FCSP Relationship box. (If John is added as a Caregiver for Mary, Mary will automatically be added as a Care Receiver for John.)</li>
+					<li>The relationship in the system-created contact will be the opposite of the relationship in the original contact. (If John is added as Mary&#8217;s son, Mary will automatically be added as John&#8217;s mother.) The full list of relationship pairs is outlined below.</li>
+				</ul>
+				<p>The relationship field will contain the same list as on the Title III contacts section of the Assessment. The child ticket updates that list.</p>
+				<p>Creating / Updating / Deleting any Care Receiver in the FCSP Relationship box will update all draft assessments for that client to match. (So if a Caregiver is Created / Updated / Deleted, the client&#8217;s relationship to the Caregiver will update on any of the Caregiver&#8217;s draft assessments to match.) A new assessment (whether blank or copied from an existing assessment) will default to contain the existing &#8216;&#8216;Care Receivers&#8217;&#8217; from the FCSP Relationship box. When an assessment is saved or signed, the FCSP Relationships box will update Care Receivers to match the assessment.</p>
+					</br>
+					</br>
+				<p>Relationship Pairs:</p>
+				<p>The list of relationships used in both the Client File > Contacts > FCSP relationship box and the Title III section of Client File > Assessment will be:</p>
+					</br>
+				<p>Caregiver -Relationships</p>
+					<p>1. Husband</p>
+					<p>1. Wife</p>
+					<p>2. Domestic Partner</p>
+					<p>3. Son/Son-in-Law</p>
+					<p>3. Daughter/Daughter-in-Law</p>
+					<p>4. Grandparent</p>
+					<p>5. Other Relative</p>
+					<p>6. Non-Relative</p>
+					<p>7. Declined to State</p>
+						</br>
+				<p>Care Receiver - Relationships</p>
+					<p>1. Husband</p>
+					<p>1. Wife</p>
+					<p>2. Domestic Partner</p>
+					<p>3. Parent/Parent-in-Law</p>
+					<p>4. Grandchild</p>
+					<p>5. Other Relative</p>
+					<p>6. Non-Relative</p>
+					<p>7. Declined to State</p>
+						</br>
+				<p>(Just the words, not the numbers, should show up in the dropdown lists in the Assessment and Contacts.)</p>
+
+				<p>The numbers that match between the lists show opposite pairs. So when a caregiver is marked &#8216;&#8216;Grandparent&#8217;&#8217;, the care receiver is marked &#8216;&#8216;Grandchild&#8217;&#8217;.</p>
+
+				<p>For the numbers on either list that include a gender, when the system is automatically generating the relationship, it should choose between the two genders based on the gender of the contact. When the contact has no gender, the system should choose &#8216;&#8216;Declined to state&#8217;&#8217;.</p>
+
+				<p>So, for example, if on Mary&#8217;s file, Harold is added as a care receiver husband, Mary will be added on Harold&#8217;s file as a caregiver wife. If Mary has no stated gender, she will be added on Harold&#8217;s file as a caregiver declined to state.</p>
+
+				<p>As another example, if on Jennifer&#8217;s file, Rosemary is added as a care receiver parent, Jennifer will automatically be added as a caregiver Daughter/Daughter-in-Law. If Jennifer has no stated gender, she will be added on Rosemary&#8217;s file as a caregiver declined to state.</p>
+			</div>
+		<div id="footer"></div>
+	</div>
+	</body>
+</html>

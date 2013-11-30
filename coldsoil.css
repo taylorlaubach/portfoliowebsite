@@ -1,0 +1,396 @@
+/* CSS Reset
+
+Borrowed from:
+	http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* main page layout start */
+
+/* page background start */
+
+html {
+	background: #bbb;
+}
+
+body {
+	width: 960px;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	margin-left:-480px;
+}
+
+#footer {
+	background: #e5e5e5;
+	width: 960px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left:-480px;
+	z-index: -1;
+}
+
+/*end page background - header start*/
+
+h1 {
+	font-size: 30pt;
+	padding-left: 41px;
+	padding-top: 16px;
+	float: left;
+	color: #ff6622;
+	text-shadow: 2px 2px 0px #fbf5e1;
+	z-index: 10;
+}
+
+#logoborder {
+		border-bottom : 3px double #f62;
+		clear: both;
+		position: relative;
+		top: 10px;
+		z-index:6;
+}
+
+h2 {
+	font-size: 20pt;
+	padding-left: 16px;
+	padding-top: 6px;
+	float: left;
+	position: relative;
+	top: 34px;
+	left: 2px;
+	color: #ff6622;
+	text-shadow: 2px 2px 0px #fbf5e1;
+}
+
+/* navbar start */
+
+ #navbar {
+	text-decoration: none;
+	text-align: center;
+	background: #777777;
+	padding: 4px;
+	border-top: solid 3px #ff6622;
+	border-bottom: solid 3px #ff6622;
+	height: 21px;
+	position:relative;
+	top: -25px;
+	left: 514px;
+	z-index: 2;
+	width: 438px;
+}
+
+#navbarslant {
+	content: "";
+	border-color: #fff #000 #777 rgba(229,229,229,0);
+	border-style: solid;
+	border-width: 0px 0px 29px 16px;
+	z-index: 3;
+}
+
+#slantborder {
+	border-bottom: 1px #f62 solid;
+	float:left;
+	clear:right;
+	position:relative;
+	top: -21px;
+	left: 498px;
+	z-index: 5;
+}
+
+a {
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #ff6622;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #fbf5e1;
+	letter-spacing: 1px;
+}
+
+a:hover {
+	background-color: #ff6622;
+	text-shadow: 1px 1px 1px #777;
+	-moz-border-radius-bottomright: 7px;
+	border-bottom-right-radius: 7px;
+	-moz-border-radius-topleft: 7px;
+	border-top-left-radius: 7px;
+}
+
+.divider {
+	border-left: solid 1px #ff6622;
+	border-bottom: solid 2px #777;
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 1px;
+
+	}
+
+#left{
+	border: none;
+}
+
+#right{
+	margin-right: 112px;
+}
+
+#home {
+	float: left;
+	clear: left;
+	position: relative;
+	top: 59px;
+	margin-left: 10px;
+	margin-right: 25px;
+}
+
+#about {
+
+	float: left;
+	position: relative;
+	top: 10px;
+	font-family: arial, sans-serif;
+	color: #111111;
+	padding-top: 16px;
+	width: 664px;
+}
+
+/*end navbar - end header - default settings start*/
+
+body {
+	background: #e5e5e5;
+	font-family: arial, sans-serif;
+}
+
+p {
+	margin-bottom: 16px;
+	margin-right: 48px;
+	margin-left: 0;
+	text-align: justify;
+}
+
+.clr {
+	clear:both;
+}
+
+/* end default settings - end main page - resume page start */
+
+#resume {
+	position:relative;
+	background-color: #fff;
+	margin: 3px;
+	margin-bottom: -1px;
+
+}
+
+#resume:hover {
+	cursor: pointer;
+}
+
+#resumecontainer {
+	border: solid 2px #fff;
+	background-color: #e5e5e5;
+	float: left;
+	position: relative;
+	left: 175px;
+}
+
+#space {
+	height: 25px;
+}
+
+/*resume page end - portfolio page start */
+
+#portfolio {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+span {
+	display: block;
+	}
+
+.column {
+	float: left;
+	width: 280px;
+	background-color: #cccccc;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 20px;
+	height: 200px;
+	margin-right: 20px;}
+
+.column p {
+	display:none;
+}
+
+
+.column:hover {
+	text-align: center;
+}
+
+.column:hover p {
+	display: inline;
+	position: relative;
+	top: 33%;
+}
+
+.column:hover img {
+	display:none;
+}
+
+.col3of3 {margin-right: 0px;}
+
+.column img {
+	position: relative;
+	left: 50%;
+}
+
+#port1 {
+	margin-left: -90px;
+}
+
+#port2 {
+	margin-left: -104px;
+}
+
+#port3 {
+	margin-left: -140px;
+	margin-top: 7px;
+}
+
+#port4 {
+	margin-left: -126px;
+}
+
+#port5 {
+	margin-left: -140px;
+	margin-top: 81px;
+}
+
+#port6 {
+	margin-left:-91px;
+}
+
+#port7 {
+	margin-left: -134px;
+}
+
+#port8 {
+	margin-left: -68px;
+}
+
+#port9 {
+	margin-left: -140px;
+	margin-top: 74px;
+}
+
+.portfoliocontent {
+	width: 960px;
+	padding: 10px;
+}
+
+.portfoliocontent p {
+	margin-left: 20px;
+	margin-right: 40px;
+}
+
+.portfoliocontent ul {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 15px;
+}
+
+.portfoliocontent ol {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 15px;
+}
+
+.portfoliocontent ul ul {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+#numbersincludedlist {
+	list-style-type: none;
+}
+
+#numbersincludedlist li:nth-of-type(even) {
+	margin-left: 18px;
+}
+
+#numbersincludedlist li:nth-of-type(odd) {
+	font-weight: bold;
+}
+
+.portfoliocontent li {
+	margin-bottom: 5px;
+}
+
+.portfoliocontent img {
+	margin: 0 auto 30px auto;
+}
+
+.final {
+	margin-bottom: 30px;
+}
+
+h3 {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.portfolioheader {
+text-align: center;
+}
+
+/* end portfolio*/
+
+/* 404 */
+
+#fourohfour {
+	float: left;
+}
+
+#emaillink {
+	text-decoration: underline;
+	text-shadow: none;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: #f62;
+}
+
+#emaillink:hover {
+	background-color: #e5e5e5;
+	text-shadow: none;
+}
+
+/* end 404 */

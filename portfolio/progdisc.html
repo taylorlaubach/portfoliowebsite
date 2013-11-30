@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Laubach Portfolio - Progressive Disclosure</title>
+		<link type="text/css" rel="stylesheet" href="http://taylorlaubach.com/coldsoil.css" />
+	</head>
+	<body>
+		<h1>Taylor Laubach</h1>
+		<h2>UX Design</h2>
+		<div id="logoborder"></div>
+		
+		<div id="slantborder"><div id="navbarslant"></div></div>
+		<div id="navbar">
+			<div class="divider" id="left"><a href="http://taylorlaubach.com/index.html">Home</a></div>
+			<div class="divider"><a href="http://taylorlaubach.com/portfolio.html">Portfolio</a></div>
+			<div class="divider" id="right"><a href="http://taylorlaubach.com/resume.html">Resume</a></div>
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="portfoliocontent">
+			<h3>The Issue:</h3>
+				<p>Users were having trouble filling out a billing invoice form. They were reporting it as broken even though our QA showed that it worked.</p>
+			
+			<h3>The Process:</h3>
+				<p>The form had two sections: the header and the body. The header specified who the invoice was for and what dates were being invoiced. The body contained the invoice items. The header needed to be filled out before it was possible to add items to the body. However, users were repeatedly attempting to skip the header and add items directly to the body. To their dismay, although they could save the header, causing the body to appear, the body would not work until they had filled out the header.</p> 
+			
+				<p>When I tried to use it, I did the same thing. The problem was that the leftmost field in the header section was disabled. When I saw this, I assumed that the whole section was disabled and clicked "Save". The form saved, presenting me with the next section. But this section didn't work either. It was only natural to assume that there were two sections, both of which were disabled.</p>
+			
+				<p>I was utterly confounded by this form for about ten minutes, until I went through my meeting notes and saw that another field needed to be filled out before the leftmost field would be enabled.</p>
+			
+				<p>At this point, the form suddenly made complete sense and I was able to use it. It worked, it just presented confusing clues as to how.</p>
+			
+				<p>The issue was that the fields needed to be filled out in a specific order. However, the existing fields were laid out so that it was anyone's guess which one was supposed to be filled out first. The page was littered with fields that could not be used. Seeing that a couple of fields were disabled (which is visually designated by subtly lightening the gray colors of the field), a user, scanning the page, would not notice the lone enabled field in the middle of the screen.</p>
+
+			<h3>The Solution:</h3>
+				
+				<p>My solution was to rearrange the fields so that from left to right they are ordered by which field should be filled in first. I also asked the programmers to show only one unentered form field at a time. (And to disable the "Save" button until all necessary fields had been filled.) This progressive disclosure means that there can be no question which field should be filled next.</p>
+							
+				<p>I've placed both the original form and the redesign below. The numbers show the order of user inputs. The red arrows show which fields are enabled (or filled with information) by each input.</p>
+
+				<p>Inputs 1-4 are the same in both cases. However, their presentation is quite different.</p>
+
+				<p class="final">In the original form, the user follows steps 1-4 in a circle, with minimal visual cues as to what should happen next.</p>
+
+				
+			<h3>The Original Form:</h3>
+			<img src="progdisc/progdisc1.png" />
+
+			<p>In my form, the steps in the interaction are:</p>
+
+			<ul class="final" id="numbersincludedlist">
+				<li>0. The user selects "Add" on the Invoice page.</li>
+
+				<li>The system generates an invoice header with editable fields for service delivery start and end dates. Only the "Cancel" button is active.</li>
+
+				<li>1. The user enters the start and end dates for the invoice.</li>
+
+				<li>The system calculates and displays a fiscal year. The "Contract" dropdown becomes visible. Its list contains only the contracts with operating budgets for the specified fiscal year.</li>
+
+				<li>2. The user selects a contract.</li>
+
+				<li>The system finds and displays the controlling agency. The "Invoice Type" field becomes visible.</li>
+
+				<li>3. The user selects an invoice type.</li>
+
+				<li>The save button becomes active.</li>
+
+				<li>4. The user saves the new invoice.</li>
+
+				<li>The invoice opens to add invoice details.</li>
+			</ul>
+
+			<h3>My Improved Version:</h3>
+			<img src="progdisc/progdisc2.png" />
+			
+		</div>
+
+		<div id="footer"></div>
+	</body>
+</html>
